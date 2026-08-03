@@ -7,7 +7,7 @@
   "license": "UNLICENSED",
   "repository": {
     "type": "git",
-    "url": "https://github.com/CHANGE-ME/interlock.git"
+    "url": "https://github.com/devaux2/InterLock.git"
   },
   "private": true,
   "main": "electron/main.cjs",

@@ -68,24 +68,8 @@ intermittent. The finished exe lands in `release/`.)
 
 ## Publishing updates (GitHub)
 
-The repo is git-initialised locally with `data/` excluded (live business data
-never leaves this machine). To connect GitHub the first time:
-
-1. Create an empty repo at github.com (suggested name `interlock`). Public is
-   required for the in-app update check to work for everyone without tokens.
-2. In this folder run:
-
-```bash
-git remote add origin https://github.com/YOUR-USER/interlock.git
-```
-
-```bash
-git push -u origin main
-```
-
-3. Put the real URL in `package.json` under `"repository"` (replace the
-   `CHANGE-ME` placeholder), commit, and rebuild the exe. Until then the in-app
-   update check reports "not set up".
+The project lives at https://github.com/devaux2/InterLock with `data/` excluded
+(live business data never leaves this machine).
 
 To ship a release: bump `"version"` in package.json, run `npm run dist`, then on
 GitHub create a release tagged `v1.2.0` (matching the version) and attach
