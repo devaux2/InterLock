@@ -71,9 +71,16 @@ intermittent. The finished exe lands in `release/`.)
 The project lives at https://github.com/devaux2/InterLock with `data/` excluded
 (live business data never leaves this machine).
 
-To ship a release: bump `"version"` in package.json, run `npm run dist`, then on
-GitHub create a release tagged `v1.2.0` (matching the version) and attach
-`release/Interlock.exe`. The Settings → Updates card compares the running
+To ship a release: bump `"version"` in package.json, commit, then push a
+matching tag:
+
+```bash
+git push origin main --follow-tags
+```
+
+The GitHub Actions workflow (`.github/workflows/release.yml`) builds
+Interlock.exe on GitHub's servers and publishes the release automatically.
+The Settings → Updates card in every copy of the app compares the running
 version against the latest release tag. Checks are manual only; nothing ever
 downloads or installs itself.
 
