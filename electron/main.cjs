@@ -295,7 +295,8 @@ if (!gotLock) {
         await new Promise(r => setTimeout(r, 2500));
         const rootPopulated = await win.webContents.executeJavaScript(
           `document.getElementById('root') && document.getElementById('root').children.length > 0`, true);
-        console.log('SMOKE_RESULT ' + JSON.stringify({ rootPopulated, errors }));
+        const updates = await checkForUpdates();
+        console.log('SMOKE_RESULT ' + JSON.stringify({ rootPopulated, errors, updates }));
         app.exit(errors.length || !rootPopulated ? 1 : 0);
       } catch (err) {
         console.error('SMOKE_ERROR', err);
