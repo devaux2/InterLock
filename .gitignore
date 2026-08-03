@@ -11,3 +11,4 @@ data/
 .claude/
 /*.pdf
 *.log
+vite.config.mjs.timestamp-*
