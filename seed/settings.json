@@ -1,0 +1,24 @@
+{
+  "company": {
+    "name": "Paradox State International Ltd",
+    "registeredAddress": "124 City Road, London, EC1V 2NX",
+    "tradingAddress": "The Cutting Rooms, 199 Eade Road, London, N4 1DN",
+    "phone": "+44 7974 282 177",
+    "email": "theo@paradoxstate.co.uk",
+    "author": "Whitcliffe Theodore Frederick Wainhouse",
+    "authorRole": "Director / Laser Safety Officer",
+    "logoAsset": "assets/logo.png",
+    "hsPolicyAsset": "assets/hs-policy.pdf",
+    "docRefPrefix": "PSI-RAMS"
+  },
+  "insurance": {
+    "insurer": "Simply Business (Xbridge Limited)",
+    "policyNumber": "FHBI3202837XB",
+    "trade": "Theatre and concert lighting including laser lighting supplier and operator",
+    "publicLiability": "£5,000,000",
+    "policyStart": "2025-07-30",
+    "policyEnd": "2026-07-29",
+    "certAsset": null
+  },
+  "lastExportDir": null
+}

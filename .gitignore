@@ -1,0 +1,13 @@
+# Dependencies and build output
+node_modules/
+dist/
+release/
+
+# Live user data: events, settings, attachments, crew details, insurance.
+# Never commit this; fresh installs seed from seed/ instead.
+data/
+
+# Local machine config and generated samples
+.claude/
+/*.pdf
+*.log

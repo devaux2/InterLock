@@ -1,0 +1,47 @@
+{
+  "name": "interlock",
+  "productName": "Interlock",
+  "version": "1.1.0",
+  "description": "Interlock — create, check and export laser-display RAMS documents as high-quality PDFs",
+  "author": "Paradox State International Ltd",
+  "license": "UNLICENSED",
+  "repository": { "type": "git", "url": "https://github.com/CHANGE-ME/interlock.git" },
+  "private": true,
+  "main": "electron/main.cjs",
+  "scripts": {
+    "dev": "node scripts/dev.mjs",
+    "build:renderer": "vite build",
+    "start": "npm run build:renderer && electron .",
+    "export:sample": "npm run build:renderer && electron . --export-sample",
+    "dist": "npm run build:renderer && electron-builder --win portable"
+  },
+  "dependencies": {
+    "@fontsource/inter": "^5.3.0",
+    "pdf-lib": "^1.17.1"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.3.4",
+    "electron": "^33.3.1",
+    "electron-builder": "^26.15.3",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "vite": "^5.4.11"
+  },
+  "allowScripts": {
+    "electron@33.4.11": true,
+    "esbuild@0.21.5": true
+  },
+  "build": {
+    "appId": "com.paradoxstate.interlock",
+    "productName": "Interlock",
+    "directories": { "output": "release" },
+    "files": ["electron/**", "dist/**", "package.json"],
+    "extraResources": [
+      { "from": "seed", "to": "seed" },
+      { "from": "print", "to": "print" },
+      { "from": "src/print", "to": "src/print" }
+    ],
+    "win": { "target": ["portable"] },
+    "portable": { "artifactName": "Interlock.exe" }
+  }
+}
