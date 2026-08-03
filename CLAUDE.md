@@ -15,6 +15,8 @@ The maintainer does not touch git or GitHub. The assistant owns all of it:
   the release (.github/workflows/release.yml). Only ship when the maintainer
   says the change should reach users; pushing code to main needs no approval.
 - Never commit `data/` (live business data; gitignored). Seeds live in `seed/`.
+- Commits carry no AI attribution trailers (no Co-Authored-By lines). The
+  maintainer's name is the only author identity on this repo.
 
 ## Conventions
 
