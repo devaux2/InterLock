@@ -2,10 +2,13 @@
   "name": "interlock",
   "productName": "Interlock",
   "version": "1.1.0",
-  "description": "Interlock — create, check and export laser-display RAMS documents as high-quality PDFs",
+  "description": "Interlock: create, check and export laser-display RAMS documents as high-quality PDFs",
   "author": "Paradox State International Ltd",
   "license": "UNLICENSED",
-  "repository": { "type": "git", "url": "https://github.com/CHANGE-ME/interlock.git" },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/CHANGE-ME/interlock.git"
+  },
   "private": true,
   "main": "electron/main.cjs",
   "scripts": {
@@ -34,14 +37,35 @@
   "build": {
     "appId": "com.paradoxstate.interlock",
     "productName": "Interlock",
-    "directories": { "output": "release" },
-    "files": ["electron/**", "dist/**", "package.json"],
-    "extraResources": [
-      { "from": "seed", "to": "seed" },
-      { "from": "print", "to": "print" },
-      { "from": "src/print", "to": "src/print" }
+    "directories": {
+      "output": "release"
+    },
+    "files": [
+      "electron/**",
+      "dist/**",
+      "package.json"
     ],
-    "win": { "target": ["portable"] },
-    "portable": { "artifactName": "Interlock.exe" }
+    "extraResources": [
+      {
+        "from": "seed",
+        "to": "seed"
+      },
+      {
+        "from": "print",
+        "to": "print"
+      },
+      {
+        "from": "src/print",
+        "to": "src/print"
+      }
+    ],
+    "win": {
+      "target": [
+        "portable"
+      ]
+    },
+    "portable": {
+      "artifactName": "Interlock.exe"
+    }
   }
 }
