@@ -81,7 +81,9 @@ export function validateEvent(event, library, settings) {
   // --- Outdoor / aviation ------------------------------------------------------
   if (d.indoorOutdoor === 'outdoor' && d.outdoorTermination === 'sky') {
     if (!event.aviation?.caaNotified) {
-      add('warn', 'venue', 'Outdoor sky-terminating display: CAA notification (CAP 736 / DAP 1918) is not yet recorded. Notify at least 7 (target 28) days before the event and record the reference.');
+      add('warn', 'venue', event.jurisdiction === 'hk'
+        ? 'Outdoor sky-terminating display: Civil Aviation Department (CAD) consultation is not yet recorded. Agree the display with CAD (and the venue) well before the event and record the reference.'
+        : 'Outdoor sky-terminating display: CAA notification (CAP 736 / DAP 1918) is not yet recorded. Notify at least 7 (target 28) days before the event and record the reference.');
     }
     if (!d.nearestAerodrome?.trim()) add('warn', 'venue', 'Outdoor sky-terminating display: nearest aerodrome / distance is blank.');
   }

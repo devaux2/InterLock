@@ -6,7 +6,7 @@ const { exportPdf } = require('./pdfExport.cjs');
 
 let mainWindow = null;
 let fontCssCache = null;
-const isHeadless = process.argv.includes('--export-sample') || process.argv.includes('--smoke');
+const isHeadless = process.argv.includes('--export-sample') || process.argv.includes('--export') || process.argv.includes('--smoke');
 let exportInFlight = 0;
 let pendingQuit = false;
 
@@ -159,13 +159,27 @@ async function runExport({ event, html, outPath }) {
   return result;
 }
 
-// ---- Headless sample export (npm run export:sample [outPath]) ----------------
+// ---- Headless export ---------------------------------------------------------
+//   electron . --export-sample [outPath]         the seeded sample (or first) event
+//   electron . --export <eventId> [outPath]      any event: events/<eventId>.json
 async function headlessExport(argv) {
-  const idx = argv.indexOf('--export-sample');
-  const outArg = argv[idx + 1] && !argv[idx + 1].startsWith('--') ? argv[idx + 1] : null;
-  const events = storage.listEvents();
-  const event = storage.getEvent('sample-gottwood-2026') || events[0];
-  if (!event) throw new Error('No events found to export');
+  const argAfter = (i) => (argv[i] && !argv[i].startsWith('--') ? argv[i] : null);
+  let event = null;
+  let outArg = null;
+  const exportIdx = argv.indexOf('--export');
+  if (exportIdx >= 0) {
+    const id = argAfter(exportIdx + 1);
+    if (!id) throw new Error('--export needs an event id (the events/<id>.json filename without .json)');
+    event = storage.getEvent(id);
+    if (!event) throw new Error(`No event "${id}" in ${storage.p('events')}`);
+    outArg = argAfter(exportIdx + 2);
+  } else {
+    const idx = argv.indexOf('--export-sample');
+    outArg = argAfter(idx + 1);
+    const events = storage.listEvents();
+    event = storage.getEvent('sample-gottwood-2026') || events[0];
+    if (!event) throw new Error('No events found to export');
+  }
   const { buildPrintHtml } = await printModule();
   const html = buildPrintHtml(event, storage.getLibrary(), storage.getSettings(), buildPrintResources(event));
   const outPath = outArg || path.join(app.getPath('temp'), defaultExportName(event));

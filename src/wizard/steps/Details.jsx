@@ -1,7 +1,8 @@
 import React from 'react';
 import {
-  Field, TextInput, DateInput, TimeInput, Segmented, YesNo, Toggle,
+  Field, TextInput, DateInput, TimeInput, Segmented, YesNo, Toggle, Select,
 } from '../../components/ui.jsx';
+import { JURISDICTIONS } from '../../jurisdictions.js';
 
 export default function DetailsStep({ draft, setDraft }) {
   const d = draft.details || {};
@@ -39,6 +40,14 @@ export default function DetailsStep({ draft, setDraft }) {
           </Field>
           <Field label="Event type">
             <TextInput value={d.eventType || ''} onChange={onText('eventType')} placeholder="e.g. Live Concert / Festival" />
+          </Field>
+          <Field label="Jurisdiction" hint="Sets the legislation, standards and site-safety wording printed in the document.">
+            <Select
+              value={draft.jurisdiction || 'uk'}
+              onChange={(e) => setDraft((prev) => ({ ...prev, jurisdiction: e.target.value }))}
+            >
+              {JURISDICTIONS.map((j) => <option key={j.id} value={j.id}>{j.label}</option>)}
+            </Select>
           </Field>
         </div>
       </section>

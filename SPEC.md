@@ -37,6 +37,7 @@ else Electron userData. Ships with `./data` so everything lives in Dropbox.
 ```jsonc
 {
   "id": "uuid", "createdAt": "...", "updatedAt": "...", "createdFrom": "eventId|null",
+  "jurisdiction": "uk|hk",            // picks library.boilerplateVariants[<id>] over library.boilerplate
   "details": {
     "eventName": "", "client": "", "contacts": "", "contactNumber": "",
     "todaysDate": "", "eventDateStart": "", "eventDateEnd": "",       // ISO dates
@@ -71,6 +72,11 @@ else Electron userData. Ships with `./data` so everything lives in Dropbox.
   pre-populate every new event.
 - `boilerplate{}`: effectsTemplate, unitsControlTemplate, methodTemplate (per eStop
   variant), eStopSpec, complianceStatement, insuranceBlurb — all with `{{placeholders}}`.
+- `boilerplateVariants{}`: per-jurisdiction overrides of `boilerplate` keys (siteSafety
+  merged one level deep). `hk` adds `jurisdictionLabel`, `classificationStandard` and
+  `authorityInfoSheet` (title/intro/note) which prints a licensing-authority particulars
+  section after the inventory. Units may carry `manufacturer`, `model`, `countryOfOrigin`,
+  `emissionMode` for that sheet.
 
 ## Screens
 1. **Home** — event cards (name, date, venue, last export), search; actions:

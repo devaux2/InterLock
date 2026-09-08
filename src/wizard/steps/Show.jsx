@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { resolveBoilerplate } from '../../print/buildPrintHtml.mjs';
 import {
   Button, Callout, Field, TextArea, Toggle, YesNo,
 } from '../../components/ui.jsx';
@@ -41,7 +42,7 @@ function controlRuns(draft, library) {
 export default function ShowStep({ draft, setDraft, library }) {
   const d = draft.details || {};
   const s = draft.show || {};
-  const bp = library.boilerplate || {};
+  const bp = resolveBoilerplate(library, draft.jurisdiction);
   const [confirmInsert, setConfirmInsert] = useState(null); // { key, text }
 
   const setShow = (k, v) => setDraft((prev) => ({ ...prev, show: { ...prev.show, [k]: v } }));

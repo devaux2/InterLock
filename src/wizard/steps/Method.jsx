@@ -1,4 +1,5 @@
 import React from 'react';
+import { resolveBoilerplate } from '../../print/buildPrintHtml.mjs';
 import {
   Field, Segmented, TextArea, TextInput, Toggle,
 } from '../../components/ui.jsx';
@@ -6,7 +7,7 @@ import {
 export default function MethodStep({ draft, setDraft, library }) {
   const s = draft.show || {};
   const d = draft.details || {};
-  const bp = library.boilerplate || {};
+  const bp = resolveBoilerplate(library, draft.jurisdiction);
   const setShow = (k, v) => setDraft((prev) => ({ ...prev, show: { ...prev.show, [k]: v } }));
 
   const eStopSentence = s.eStopVariant === 'digital'

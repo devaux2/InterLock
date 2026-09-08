@@ -16,6 +16,7 @@ export function makeNewEvent(library, settings) {
     updatedAt: now,
     createdFrom: null,
     createdFromName: null,
+    jurisdiction: 'uk',
     docMeta: { reference: '', revision: '1', status: 'Draft' },
     details: {
       eventName: '',

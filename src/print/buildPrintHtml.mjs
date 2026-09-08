@@ -61,11 +61,24 @@ export function assembleAppendices(event, library, settings) {
 
 const isImageFile = (f) => /\.(png|jpe?g|webp|gif|svg)$/i.test(f || '');
 
+// Boilerplate for a jurisdiction: library.boilerplate is the default (UK) text;
+// library.boilerplateVariants[<jurisdiction>] overrides it key by key, with
+// siteSafety merged one level deeper so a variant can replace a single paragraph.
+export function resolveBoilerplate(library, jurisdiction) {
+  const base = library.boilerplate || {};
+  const variant = (library.boilerplateVariants || {})[jurisdiction || 'uk'] || {};
+  return {
+    ...base,
+    ...variant,
+    siteSafety: { ...(base.siteSafety || {}), ...(variant.siteSafety || {}) },
+  };
+}
+
 // ---------------------------------------------------------------------------
 
 export function buildPrintHtml(event, library, settings, resources = {}) {
   const d = event.details || {};
-  const bp = library.boilerplate || {};
+  const bp = resolveBoilerplate(library, event.jurisdiction);
   const company = settings.company || {};
   const ins = settings.insurance || {};
   const people = library.personnel || [];
@@ -148,6 +161,7 @@ export function buildPrintHtml(event, library, settings, resources = {}) {
   <table class="kv">
     ${kv('Document reference', docRef)}
     ${kv('Revision / status', `${event.docMeta?.revision || '1'} (${event.docMeta?.status || 'Issued'})`)}
+    ${kv('Jurisdiction', bp.jurisdictionLabel || 'United Kingdom')}
     ${kv('Prepared by', `${company.author || ''}${company.authorRole ? ', ' + company.authorRole : ''}`)}
     ${kv('Reviewed / approved by (LSO)', lso ? lso.name : '—')}
     ${kv('Issue date', fmtDate(d.todaysDate))}
@@ -232,10 +246,47 @@ export function buildPrintHtml(event, library, settings, resources = {}) {
       </tr>`).join('')}
     </tbody>
   </table>
-  ${units.length ? `<p class="tablenote">Classification per BS EN 60825-1:2014+A11:2021. Safety features per unit:
+  ${units.length ? `<p class="tablenote">Classification per ${esc(bp.classificationStandard || 'BS EN 60825-1:2014+A11:2021')}. Safety features per unit:
   ${units.map((u, i) => `<strong>L${i + 1}</strong>: ${esc(u.safetyFeatures || 'see technical sheet')}`).join('; ')}.
   ${units.some(u => u.control) ? 'Control: ' + units.map((u, i) => `<strong>L${i + 1}</strong> ${esc(u.control)}`).join('; ') + '.' : ''}</p>` : ''}
   ${event.show?.unitsControlText ? nl2p(event.show.unitsControlText) : ''}`;
+
+  // Particulars in the form a licensing authority's laser information sheet
+  // asks for (for Hong Kong: FEHD form FEHB104, Annex III "Display Laser
+  // Information"). Printed only when the jurisdiction's boilerplate defines
+  // authorityInfoSheet.
+  const ais = bp.authorityInfoSheet;
+  const operatorRows = [lso, ...operators]
+    .filter((p, i, arr) => p && arr.findIndex(q => q && q.id === p.id) === i);
+  const authoritySheet = ais ? `
+  ${sec(ais.title || 'Display laser information for the licensing authority')}
+  ${nl2p(ais.intro)}
+  <table class="kv">
+    ${kv('Organiser / licence applicant', d.client)}
+    ${kv('Supplier and installer of the laser system', [company.name, company.author, company.phone].filter(Boolean).join(', '))}
+    ${kv('Location of installation', [d.venue, d.venueAddress].filter(Boolean).join(', '))}
+    ${kv('Indoor / outdoor', cap(d.indoorOutdoor))}
+    ${kv('Permanent / temporary', `${d.installationType || 'Temporary'}${eventDates && eventDates !== '—' ? ', performance period ' + eventDates : ''}`)}
+    ${kv('Date of installation', [fmtDate(d.loadInDate), d.loadInTime].filter(Boolean).join(' · '))}
+    ${kv('Intended purpose', event.show?.purpose || ais.purpose || 'Laser display')}
+  </table>
+  ${units.map((u, i) => `
+  <table class="kv">
+    ${kv(`Unit L${i + 1}`, `${u.name} (qty ${u.qty})`, { strong: true })}
+    ${kv('Manufacturer', u.manufacturer || 'See technical sheet')}
+    ${kv('Model number', u.model || u.name)}
+    ${kv('Country of origin', u.countryOfOrigin || 'See technical sheet')}
+    ${kv('Class of laser', u.laserClass || 'Class 4')}
+    ${kv('Emission mode', u.emissionMode || 'Continuous wave (CW)')}
+    ${kv('Wavelengths and maximum output', [u.wavelengths, u.totalPower ? 'total ' + u.totalPower : ''].filter(Boolean).join('; '))}
+    ${kv('Output beam diameter', u.beamSize)}
+    ${kv('Beam divergence', divergenceBoth(u.divergence))}
+  </table>`).join('')}
+  <table class="grid personnel-table">
+    <thead><tr><th style="width:44%">Operator</th><th>Trained operator</th><th>Relevant experience</th></tr></thead>
+    <tbody>${operatorRows.map(p => `<tr><td class="strong">${esc(p.name)}</td><td>Yes</td><td>Yes</td></tr>`).join('')}</tbody>
+  </table>
+  ${nl2p(ais.note)}` : '';
 
   const effects = `
   ${sec('Effects & application')}
@@ -351,7 +402,9 @@ export function buildPrintHtml(event, library, settings, resources = {}) {
   ${nl2p(bp.insuranceBlurb)}
   ${certIdx >= 0
     ? `<p class="strong">The current Certificate of Insurance is reproduced in full as Appendix ${String.fromCharCode(65 + certIdx)} of this document.</p>`
-    : `<p class="strong" style="color:#b3261e">No certificate of insurance is attached to this draft. The issued document must include the certificate itself; add it on the Insurance tab before export.</p>`}`;
+    : String(event.docMeta?.status || '').toLowerCase() === 'draft'
+      ? `<p class="strong">Draft for review: the current certificate of insurance is appended in full to the issued revision of this document.</p>`
+      : `<p class="strong" style="color:#b3261e">No certificate of insurance is attached to this draft. The issued document must include the certificate itself; add it on the Insurance tab before export.</p>`}`;
 
   const briefRows = [...operators, ...assistants.filter(a => !operators.some(o => o.id === a.id))]
     .filter(pn => !lso || pn.id !== lso.id);
@@ -413,6 +466,7 @@ ${eventDetails}
 ${scope}
 ${roles}
 ${inventory}
+${authoritySheet}
 ${effects}
 ${exposure}
 ${zones}
@@ -452,6 +506,14 @@ function terminationText(t) {
     : t === 'structure' ? 'Onto structure / non-reflective surface'
       : t === 'treeline' ? 'Above audience, below treeline, terminating on landscape'
         : '—';
+}
+// "< 1.2 mrad" -> "< 1.2 mrad (< 0.0012 rad)"; licensing forms often ask for radians.
+function divergenceBoth(s) {
+  const str = String(s || '');
+  const m = str.match(/([<≤~]?)\s*(\d+(?:\.\d+)?)\s*mrad/i);
+  if (!m) return str || '—';
+  const rad = String(parseFloat(m[2]) / 1000);
+  return `${str} (${m[1] ? m[1] + ' ' : ''}${rad} rad)`;
 }
 function figureKindLabel(kind) {
   return kind === 'sitePlan' ? 'Site plan' : kind === 'zoneDiagram' ? 'Laser zone diagram' : 'Figure';

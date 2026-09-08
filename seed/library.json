@@ -62,21 +62,60 @@
       "safetyFeatures": "Key switch, remote interlock, emission indicator, scan-fail protection",
       "notes": "",
       "nohd": "",
-      "techSheetAsset": "assets/alpha-6w-tech-sheet.pdf"
+      "techSheetAsset": "assets/alpha-6w-tech-sheet.pdf",
+      "manufacturer": "Laserviva (OEM), built to Paradox State specification",
+      "model": "Alpha 6W RGB (Paradox Atlas P6)",
+      "countryOfOrigin": "China",
+      "emissionMode": "Continuous wave (CW), diode"
     }
   ],
   "personnel": [
     {
       "id": "person-whitcliffe",
       "name": "Whitcliffe Theodore Frederick Wainhouse",
-      "roles": ["LSO", "Operator"],
+      "roles": [
+        "LSO",
+        "Operator"
+      ],
       "competence": "Director; Laser Safety Officer; laser display design and operation across UK festivals and venues; trained in Pangolin Beyond programming and safe display alignment.",
       "phone": "+44 7974 282 177"
     },
-    { "id": "person-poppy", "name": "Poppy Inglis", "roles": ["Operator"], "competence": "Trained laser operator (Pangolin systems); experienced across Paradox State festival installations.", "phone": "" },
-    { "id": "person-amelia", "name": "Amelia Gregg", "roles": ["Operator"], "competence": "Trained laser operator (Pangolin systems).", "phone": "" },
-    { "id": "person-michelle", "name": "Michelle Roberts", "roles": ["Operator"], "competence": "Trained laser operator (Pangolin systems).", "phone": "" },
-    { "id": "person-natasha", "name": "Natasha Davies", "roles": ["Operator"], "competence": "Trained laser operator (Pangolin systems).", "phone": "" }
+    {
+      "id": "person-poppy",
+      "name": "Poppy Inglis",
+      "roles": [
+        "Operator"
+      ],
+      "competence": "Trained laser operator (Pangolin systems); experienced across Paradox State festival installations.",
+      "phone": ""
+    },
+    {
+      "id": "person-amelia",
+      "name": "Amelia Gregg",
+      "roles": [
+        "Operator"
+      ],
+      "competence": "Trained laser operator (Pangolin systems).",
+      "phone": ""
+    },
+    {
+      "id": "person-michelle",
+      "name": "Michelle Roberts",
+      "roles": [
+        "Operator"
+      ],
+      "competence": "Trained laser operator (Pangolin systems).",
+      "phone": ""
+    },
+    {
+      "id": "person-natasha",
+      "name": "Natasha Davies",
+      "roles": [
+        "Operator"
+      ],
+      "competence": "Trained laser operator (Pangolin systems).",
+      "phone": ""
+    }
   ],
   "riskLibrary": [
     {
@@ -87,7 +126,10 @@
       "persons": "E, C, P, V",
       "controls": "All above-MPE projection kept a minimum of 3 m above audience head height; beams terminated onto defined non-reflective surfaces or open sky; software zoning verified during alignment plus physical steel grating and blackened aluminium masking fixed at the aperture; reflective surfaces identified and masked during install.",
       "action": "LSO verifies zones, masking and termination before doors; daily re-checks on multi-day installs",
-      "initL": 3, "initS": 4, "resL": 1, "resS": 4
+      "initL": 3,
+      "initS": 4,
+      "resL": 1,
+      "resS": 4
     },
     {
       "id": "risk-scan-fail",
@@ -97,7 +139,10 @@
       "persons": "E, C, P, V",
       "controls": "Scan-fail protection terminates emission on scanner fault; physical masking limits output to approved zones regardless of software state; operator in constant attendance with immediate access to the emergency stop (Category 0, BS EN ISO 13850).",
       "action": "E-stop and scan-fail function tested and recorded before every performance",
-      "initL": 2, "initS": 5, "resL": 1, "resS": 4
+      "initL": 2,
+      "initS": 5,
+      "resL": 1,
+      "resS": 4
     },
     {
       "id": "risk-fixture-shift",
@@ -107,7 +152,10 @@
       "persons": "E, C, P, V",
       "controls": "Brackets fixed to units with hydraulic pressure plates; bracket clamped to a rated mounting bar and secured with a wrench; secondary safety bond on every flown unit; clamping tested with reasonable force once installed.",
       "action": "Rigging check by LSO after install and before each performance",
-      "initL": 2, "initS": 5, "resL": 1, "resS": 4
+      "initL": 2,
+      "initS": 5,
+      "resL": 1,
+      "resS": 4
     },
     {
       "id": "risk-manual-handling",
@@ -117,7 +165,10 @@
       "persons": "E, C",
       "controls": "Manual handling training; staff work in pairs of operator and assistant when rigging; loads kept within individual capability; suitable cases and trolleys used; mechanical aid used where available.",
       "action": "Crew briefed at induction; supervisor monitors during load-in/out",
-      "initL": 3, "initS": 3, "resL": 2, "resS": 2
+      "initL": 3,
+      "initS": 3,
+      "resL": 2,
+      "resS": 2
     },
     {
       "id": "risk-electrical",
@@ -127,7 +178,10 @@
       "persons": "E, C, V",
       "controls": "Equipment visually inspected before use; damaged equipment removed from service; water-resistant supplies and housings on outdoor units; supplies via RCD protection; equipment unplugged before being worked on; temporary installations comply with the Electricity at Work Regulations 1989 / BS 7909.",
       "action": "Pre-use checks at each install; defects reported to LSO",
-      "initL": 2, "initS": 4, "resL": 1, "resS": 4
+      "initL": 2,
+      "initS": 4,
+      "resL": 1,
+      "resS": 4
     },
     {
       "id": "risk-trips",
@@ -137,7 +191,10 @@
       "persons": "E, C, P, V",
       "controls": "Cabling routed away from walkways or fed through trenches; taped, matted or ramped where crossings are unavoidable; cable runs double-checked at each stage of the installation; routes agreed with site management.",
       "action": "Walk-through inspection after install and before doors",
-      "initL": 3, "initS": 3, "resL": 2, "resS": 2
+      "initL": 3,
+      "initS": 3,
+      "resL": 2,
+      "resS": 2
     },
     {
       "id": "risk-rigging-abrasion",
@@ -147,7 +204,10 @@
       "persons": "E, C",
       "controls": "Surroundings checked before approaching; workers' gloves and long-sleeved clothing worn during rigging.",
       "action": "PPE checked at induction",
-      "initL": 3, "initS": 2, "resL": 2, "resS": 2
+      "initL": 3,
+      "initS": 2,
+      "resL": 2,
+      "resS": 2
     },
     {
       "id": "risk-wah",
@@ -157,7 +217,10 @@
       "persons": "E, C, V",
       "controls": "Work at height planned and minimised; suitable access equipment used by trained personnel only; tools lanyard-secured; exclusion area maintained below overhead work per the Work at Height Regulations 2005.",
       "action": "Site supervisor controls access below overhead work",
-      "initL": 2, "initS": 5, "resL": 1, "resS": 4
+      "initL": 2,
+      "initS": 5,
+      "resL": 1,
+      "resS": 4
     },
     {
       "id": "risk-stage-area",
@@ -167,7 +230,10 @@
       "persons": "E, C",
       "controls": "No operators or assistants enter the stage area until given express permission by stage management; safe working area maintained; high-visibility clothing where required by site rules.",
       "action": "Coordination with stage manager before each work period",
-      "initL": 2, "initS": 4, "resL": 1, "resS": 3
+      "initL": 2,
+      "initS": 4,
+      "resL": 1,
+      "resS": 3
     },
     {
       "id": "risk-noise",
@@ -177,7 +243,10 @@
       "persons": "E, C",
       "controls": "All crew have dedicated moulded ear plugs or are supplied disposable plugs for each shift; hearing protection checked before approaching high-volume areas.",
       "action": "Checked at induction and before each show",
-      "initL": 3, "initS": 3, "resL": 2, "resS": 2
+      "initL": 3,
+      "initS": 3,
+      "resL": 2,
+      "resS": 2
     },
     {
       "id": "risk-intoxication",
@@ -187,7 +256,10 @@
       "persons": "E, C",
       "controls": "No crew member may drink alcohol within 24 hours of operating, or 12 hours of handling/rigging equipment; instant dismissal from site of any intoxicated staff.",
       "action": "Enforced by site lead; zero-tolerance policy",
-      "initL": 2, "initS": 4, "resL": 1, "resS": 3
+      "initL": 2,
+      "initS": 4,
+      "resL": 1,
+      "resS": 3
     },
     {
       "id": "risk-fatigue",
@@ -197,7 +269,10 @@
       "persons": "E, C",
       "controls": "Mandatory minimum 8-hour break between operation and any other set task; staff check in and out of shifts via group messenger; alertness confirmed before dismantling begins.",
       "action": "Site lead confirms rest periods before de-rig",
-      "initL": 3, "initS": 3, "resL": 2, "resS": 3
+      "initL": 3,
+      "initS": 3,
+      "resL": 2,
+      "resS": 3
     },
     {
       "id": "risk-crowd",
@@ -207,7 +282,10 @@
       "persons": "E, P, V",
       "controls": "Equipment positioned behind barriers or out of public reach where practicable; on any loss of control on site the operator cuts emission via the e-stop and awaits the all-clear; security informed and re-enable only on LSO authorisation.",
       "action": "Show-stop procedure briefed to all operators",
-      "initL": 2, "initS": 3, "resL": 1, "resS": 3
+      "initL": 2,
+      "initS": 3,
+      "resL": 1,
+      "resS": 3
     },
     {
       "id": "risk-weather",
@@ -217,7 +295,10 @@
       "persons": "E, C, P",
       "controls": "Weather forecast monitored; outdoor units IP-rated or protected; work at height and rigging suspended above safe wind speeds; display suspended if conditions render it unsafe; equipment electrically isolated during electrical storms.",
       "action": "LSO/site lead reviews conditions at each work period",
-      "initL": 3, "initS": 3, "resL": 2, "resS": 3
+      "initL": 3,
+      "initS": 3,
+      "resL": 2,
+      "resS": 3
     },
     {
       "id": "risk-aircraft",
@@ -227,7 +308,10 @@
       "persons": "P (aircrew)",
       "controls": "CAA notified per CAP 736 (DAP 1918 / online portal); distance to nearest aerodrome assessed against CAP 736 restriction zones; beams elevated above horizontal only within the notified arrangement; named Display Operator with immediate termination capability on duty throughout; display terminated immediately on any ATC or event-control request.",
       "action": "CAA notification reference recorded in this document before the event",
-      "initL": 2, "initS": 5, "resL": 1, "resS": 5
+      "initL": 2,
+      "initS": 5,
+      "resL": 1,
+      "resS": 5
     },
     {
       "id": "risk-unauthorised",
@@ -237,7 +321,10 @@
       "persons": "E, C, P, V",
       "controls": "Key control by the LSO; keys removed and equipment disabled whenever unattended; controlled area around projectors restricted to authorised personnel; laser warning signage displayed at access points.",
       "action": "LSO holds keys; checked at every departure from the control position",
-      "initL": 2, "initS": 4, "resL": 1, "resS": 4
+      "initL": 2,
+      "initS": 4,
+      "resL": 1,
+      "resS": 4
     }
   ],
   "boilerplate": {
@@ -305,5 +392,70 @@
     "briefingText": "Each crew member signs below to confirm they have read, understood and will comply with this RAMS, including the alignment procedure, controlled areas, show-stop and emergency arrangements.",
     "effectsTemplate": "The show will be lissajous sheets of light, varying in colour and concentration. There will be NO straight beams used on site; these are disabled digitally within the control software. Pangolin Beyond will be used as primary control on a Lenovo laptop, and in the rare event of failure a backup control PC will be on site with a duplicate of the showfile. The desired effect is to create a ceiling of lissajous effects a minimum of 3 m above the height of the crowd, terminating {{termination}}.",
     "unitsControlTemplate": "The units being used are {{unitSummary}}. They will be controlled via Pangolin Beyond using {{controlRuns}}. Output is constrained by software zoning verified at alignment, plus physical steel shuttering and blackened aluminium masking fixed at each aperture."
+  },
+  "boilerplateVariants": {
+    "hk": {
+      "jurisdictionLabel": "Hong Kong SAR",
+      "classificationStandard": "IEC 60825-1 (Safety of laser products, Part 1), the classification standard adopted in the EMSD Laser Safety Guidance Notes",
+      "complianceLine": "Prepared for a temporary place of public entertainment in the Hong Kong SAR with reference to the Places of Public Entertainment Ordinance (Cap. 172), the Occupational Safety and Health Ordinance (Cap. 509), the Electricity Ordinance (Cap. 406), the EMSD Laser Safety Guidance Notes for Industry, Display and Entertainment (2005), IEC 60825-1, IEC TR 60825-3:2022 and PLASA Safety of Display Lasers (April 2016) as the industry code of practice.",
+      "references": [
+        "Places of Public Entertainment Ordinance (Cap. 172) and Places of Public Entertainment Regulations (Cap. 172A): a laser projection display is entertainment under the Ordinance; the event organiser holds the Temporary Places of Public Entertainment (TPPE) licence issued by the Food and Environmental Hygiene Department (FEHD) and declares the laser operation in the application",
+        "FEHD, A Guide to Application for Places of Public Entertainment Licences for Places Other Than Cinemas and Theatres (September 2026 edition), Section 6: laser equipment (Display Laser Information sheet, location plans, equipment specifications, account of display modes, EMSD on-site inspection and demonstration before commencement)",
+        "FEHD form FEHB104, Annex III: Display Laser Information",
+        "Electrical and Mechanical Services Department (EMSD), Laser Safety Guidance Notes for Industry, Display and Entertainment (2005 edition), Part 4: Guidance on the Safe Use of Lasers for Display Purposes",
+        "Fire Services Department, PPA/106 Fire Safety Requirements for Temporary Places of Public Entertainment (Rev. 7/2024) and the Fire Services Ordinance (Cap. 95)",
+        "Occupational Safety and Health Ordinance (Cap. 509) and Occupational Safety and Health Regulation (Cap. 509A)",
+        "Factories and Industrial Undertakings Ordinance (Cap. 59) and its subsidiary regulations, where construction work is carried out on site",
+        "Electricity Ordinance (Cap. 406) and Electricity (Wiring) Regulations (Cap. 406E): temporary power installations by a registered electrical worker and contractor, Work Completion Certificate (Form WR1)",
+        "Employees' Compensation Ordinance (Cap. 282)",
+        "Buildings Ordinance (Cap. 123): temporary structures and Registered Structural Engineer (RSE) certification where the venue's thresholds apply",
+        "IEC 60825-1, Safety of laser products, Part 1: Equipment classification and requirements",
+        "IEC TR 60825-3:2022, Safety of laser products, Part 3: Guidance for laser displays and shows",
+        "PLASA, Safety of Display Lasers, 1st Edition, April 2016 (industry code of practice; successor to HSE HS(G)95, on which Part 4 of the EMSD Guidance Notes is based)",
+        "ISO 13850, Safety of machinery: emergency stop function",
+        "AsiaWorld-Expo Organiser Manual, Contractor Guide (Version 1.2, August 2024): venue prior approval for laser effects, Form WR1, RSE report thresholds, working at height, access and house rules",
+        "Control of Artificial Optical Radiation at Work Regulations 2010 (United Kingdom, SI 2010/1140): the contractor's home exposure-limit framework, applied to this display as good practice"
+      ],
+      "scopeTemplate": "This document sets out the laser safety arrangements, risk assessment and method statement for the laser display provided by {{company}} at {{eventName}}{{venuePart}}. It covers the delivery, installation, alignment, programming, operation and removal of the laser display equipment listed herein, by the personnel named herein. It is prepared to support the event organiser's application for a Temporary Places of Public Entertainment (TPPE) licence, in which the laser operation is declared, the venue's prior approval of the laser effect, and the EMSD on-site inspection of the installed equipment; it forms part of the event safety documentation. It is valid only for the event, venue, equipment and personnel stated; any change requires review and re-issue by the Laser Safety Officer.",
+      "lsoResponsibilities": "In accordance with the EMSD Laser Safety Guidance Notes and PLASA guidance, Paradox State International Ltd appoints a named Laser Safety Officer (LSO) for every installation. The LSO holds executive, not merely advisory, responsibility for laser safety: they evaluate and manage the laser risks, approve projector positions, zoning, masking and programming, carry out and record alignment and pre-show checks, attend the EMSD inspection and demonstration, and have absolute authority to suspend or terminate laser emission at any time without reference to any other party. No change to projector positions, output power, effects programming or beam zones may be made without the LSO's agreement.\n\nLaser projectors are operated only by trained operators named in this document. A competent operator remains in attendance at the laser control position, with an unobstructed view of the whole display area and immediate access to the emergency stop, at all times when laser emission is possible.\n\nThe event organiser, as TPPE licence applicant, provides site information, integrates this RAMS into the event safety plan and the licence application, maintains agreed audience barriers and crowd management, and communicates the show-stop procedure. The venue (AsiaWorld-Expo Management Ltd) advises of reflective surfaces, rigging limitations, house rules and emergency procedures, and gives prior approval for the laser effect. Responsibility for laser safety is allocated between the parties before the display and is not assumed by default.",
+      "controlledAreas": "A laser controlled area is established around each projector and any area in which above-MPE beams are accessible, and the boundary of the laser display area is defined on the effect layout appended to this document. Access is restricted to authorised, safety-briefed personnel under the control of the LSO; laser warning signage compliant with IEC TR 60825-3:2022 is displayed at access points. Projectors are rigidly mounted with secondary safeties so that they cannot be displaced or redirected by vibration or impact. Beam output is constrained to the approved zones by software zoning verified during alignment and by physical masking or aperture plates at the projector (black-finished steel or aluminium, as recommended in Part 4 of the EMSD Guidance Notes), so that no software or scanner failure can direct emission outside the approved zones. Every static beam path terminates on a defined non-reflective, non-flammable surface within the display area boundary; no emission leaves the venue.",
+      "audienceScanningYes": "Audience scanning: YES, with an engineered safety case. Deliberate audience exposure is designed and verified in accordance with IEC TR 60825-3:2022 and PLASA guidance. Exposure at the closest point of audience access has been calculated and verified by on-site measurement through a 7 mm aperture, under normal operation and simulated failure conditions, and does not exceed the applicable MPE (taken as 10 W/m² for 400 to 700 nm on a minimum 10-second time base{{childrenClause}}). Scan-failure detection hardware terminates emission on scanner fault such that no single-component failure can produce an accessible above-MPE beam. Pulsed lasers are never used for audience scanning. Measurement records form part of this document and are made available to EMSD at inspection.",
+      "eStopSpec": "The emergency stop function is a CATEGORY 0 stop, implemented by the engagement and disengagement of the 220 V AC single-phase power feed to the projector(s) via a solid-state relay hard-lined from the operator's control position. After actuation of the emergency stop actuator, hazardous operation of the equipment is stopped without creating additional hazards and without further intervention by any person.\n\nStop category 0 (stopping by immediate removal of power to the laser(s)) is applied in accordance with ISO 13850 (in conjunction with the stop-category definitions of IEC 60204-1). Once active operation of the emergency stop device has ceased following an emergency stop command, the effect of the command is sustained until it is manually reset. Reset is possible only at the location where the command was initiated, and the reset does not restart the equipment but only permits restarting.\n\nThe emergency stop provision is the emergency cut-off called for in Part 4 of the EMSD Laser Safety Guidance Notes and forms part of the control-system integrity measures recommended by IEC TR 60825-3:2022; its function is tested and recorded as a pre-show check before every public session, with all unit shutters fully raised.",
+      "eStopSpecDigital": "The emergency stop function is a CATEGORY 0 stop, implemented digitally: actuation of the emergency stop control removes power from the laser emission stages of every projector via the units' onboard safety protocol, terminating emission immediately, without creating additional hazards and without further intervention by any person. The digital emergency stop path is independent of the show-control software, so a software or showfile fault cannot prevent actuation.\n\nStop category 0 (stopping by immediate removal of power to the laser emission stages) is applied in accordance with ISO 13850 (in conjunction with the stop-category definitions of IEC 60204-1). Once active operation of the emergency stop device has ceased following an emergency stop command, the effect of the command is sustained until it is manually reset by the operator at the control position; the reset does not restart emission but only permits restarting.\n\nThe emergency stop provision is the emergency cut-off called for in Part 4 of the EMSD Laser Safety Guidance Notes and forms part of the control-system integrity measures recommended by IEC TR 60825-3:2022; its function is tested and recorded as a pre-show check before every public session, with all unit shutters fully raised.",
+      "emergencyProcedures": "Show stop. Laser emission can be terminated immediately at any time by the operator's emergency stop (Category 0 stop to ISO 13850, removing power to emission), and will be terminated at once on: any suspected exposure of any person to an above-MPE beam; displacement or suspected displacement of any projector or of the termination screen; failure of scan-fail, masking or zoning; instruction from the LSO, the organiser's event management, the venue, the licensing authorities or emergency services; and encroachment of any person into a beam zone or controlled area. The display resumes only on the LSO's authorisation after the cause is identified, corrected and re-checked.\n\nSuspected eye exposure. Emission is stopped immediately; the affected person is advised not to rub the eye and is referred the same day for ophthalmological examination, regardless of symptoms. The incident is recorded and investigated by the LSO, reported at once to the event organiser and the venue under their incident procedures, and notified to the Labour Department where required under the Occupational Safety and Health Ordinance (Cap. 509) and the Employees' Compensation Ordinance (Cap. 282); equipment and programming are quarantined pending investigation.\n\nFire, evacuation and first aid follow the venue's house procedures and the organiser's event safety plan, with which our crew are inducted on arrival; the Hong Kong emergency number is 999. On evacuation the operator terminates emission and isolates power before leaving the control position, if safe to do so.",
+      "aviationSafety": "This display projects laser light into open airspace. The venue lies beside Hong Kong International Airport, so no outdoor emission takes place until the arrangement has been agreed in writing with the Civil Aviation Department and the venue, with regard to the Hong Kong Airport (Control of Obstructions) Ordinance, and any conditions they set are recorded in this document. A named Display Operator with immediate termination capability is on duty throughout, and the display is terminated at once on any request from air traffic control, the venue or event control. No beam will be directed at any aircraft: exhibiting a light that endangers an aircraft in flight is an offence under the Air Navigation (Hong Kong) Order 1995.",
+      "aviationPermanentSite": "As this installation is in place for an extended period, the arrangement is agreed with the Civil Aviation Department and the venue for its full duration.",
+      "siteSafety": {
+        "electrical": "Electrical safety. Temporary electrical installations comply with the Electricity Ordinance (Cap. 406) and the Electricity (Wiring) Regulations (Cap. 406E) and with the venue's rules: at AsiaWorld-Expo, power installations are completed by a registered electrical worker and a Work Completion Certificate (Form WR1) is submitted through the organiser. Laser and control equipment connects only to the socket outlet supplied for the display by the venue's official electrical contractor (220 V, 50 Hz, RCD-protected); the contractor makes no fixed wiring alterations. Equipment is visually inspected before use and removed from service if damaged.",
+        "workAtHeight": "Work at height. Where rigging or focusing requires work at height it is planned, minimised and carried out by trained personnel under the Occupational Safety and Health Ordinance (Cap. 509) and the venue's rules: no ladder over 2 m and no wooden or modified ladders; a proper working platform with a valid safety certificate (Form 5) and a full-body harness are used for work above 2 m; every flown projector carries a rated secondary safety bond. Any item suspended from the venue ceiling is rigged by the venue's rigging service to its suspension points; the venue's thresholds for a Registered Structural Engineer's report (including any suspended item over 100 kg) are checked with the venue in advance, and nothing is suspended without the organiser's and venue's written agreement.",
+        "manualHandling": "Manual handling. Loads are assessed; suitable cases, trolleys and team lifts are used; crew work within their individual capability. Goods are moved on rubber-wheeled trolleys along the venue's paved routes, with floor protection where the venue requires it, and never through guest lifts or escalators.",
+        "cables": "Cable management. Cable runs are routed through venue trenches or tunnels where available, otherwise protected by tape, matting or ramps; no cable crosses a main aisle; runs are re-checked at each stage of the installation and agreed with the organiser's floor manager.",
+        "haze": "Haze and smoke. The laser contractor does not use haze or smoke unless stated in the event details. Where haze is used it is a venue-approved special effect at AsiaWorld-Expo: its use is declared to the venue and, through the organiser, to the Fire Services Department in advance; only water-based fluid with a safety data sheet is used; the venue's arrangements for its fire detection system are followed.",
+        "fire": "Fire. Beam paths terminate on non-flammable, non-reflective surfaces; projectors and power equipment are kept clear of combustible materials; fire service installations, exits and escape routes are kept accessible at all times; no hot work is carried out; crew are inducted in the venue's fire and evacuation procedures, which reflect the Fire Services Department's requirements for the licensed premises (PPA/106).",
+        "ppe": "PPE. Workers' gloves and long-sleeved clothing are worn for rigging; safety footwear and a reflective vest are worn during move-in and move-out and in any area with moving vehicles, in line with the venue's dress rules; laser protective eyewear of appropriate optical density is worn within controlled areas during alignment only (eyewear is not a substitute for engineering controls during the show); hearing protection is used in high-volume areas."
+      },
+      "methodSteps": [
+        "Arrival and site registration: crew register with the organiser and AsiaWorld-Expo security, obtain the required wristbands or badges, receive the site induction and confirm first-aid, fire and evacuation arrangements. Appropriate clothing and PPE are checked before any equipment leaves the transport.",
+        "Coordination: contact is made with the organiser's production manager and, where required, the venue's event manager to confirm that the venue's prior approval for the laser effect and the electrical supply are in place and that it is safe to proceed. No crew enter the build area until given express permission.",
+        "Unload and distribution: equipment enters via the designated loading bay under the venue's vehicle-staging rules and is moved on rubber-wheeled trolleys along paved routes to the display position, working in pairs within individual capability.",
+        "Termination surface and mounting: the projection screen or scrim frame is erected and made stable on its own base or rigging, with the non-reflective backdrop and the controlled area behind it established before any projector is positioned. Projectors are mounted on rated brackets or stands, secured with a wrench and fitted with secondary safeties where flown; clamping is tested with reasonable force.",
+        "Power and control: the projectors connect only to the socket outlet supplied by the venue's official electrical contractor; control cabling is run between the projectors and the operator's control position, with all cabling taped, matted or ramped and double-checked. The emergency stop is installed and tested at the control position. {{eStopSentence}}",
+        "E-stop verification: a full emergency-stop test is carried out with all unit shutters fully raised, and the result recorded.",
+        "Zoning and alignment: the area is cleared of the public and other contractors are warned before laser zoning starts. Units are zoned individually at minimum output, with black-finished physical masking applied at the aperture so that no emission can leave the approved zone, in accordance with the alignment procedure in this document.",
+        "Programming and verification: software zones and masks are verified against the approved effect layout; showfiles are checked on the primary and backup control systems.",
+        "Inspection: the installation is presented for the EMSD on-site inspection and demonstration of the laser display before the display commences, and for any inspection by the organiser, the venue or the other licensing departments, with the LSO in attendance and this document available on site. Any recommendation made at inspection is implemented and, if required, a re-inspection is arranged before the display goes public.",
+        "Pre-show checks: the Display Safety Record checks, including the functional check of every safety device, are completed and recorded before the public is admitted to each session; the LSO authorises the display.",
+        "Show operation: a trained operator remains at the control position with an unobstructed view of the whole display area and immediate access to the e-stop throughout; the show-stop procedure applies at all times. At no point during operation is the audience scanned{{scanningException}}.",
+        "Shutdown and security: after each session emission is disabled, keys are removed and held by the LSO, and equipment is left secured within the controlled area or removed from the hall.",
+        "De-rig and load-out: dismantling begins only when crew alertness is confirmed after the mandatory rest period; equipment is inspected, packed and removed via the loading bay following the same manual-handling, vehicle-staging and coordination controls as the load-in."
+      ],
+      "complianceStatement": "Paradox State International Ltd is a United Kingdom company providing this display as a specialist contractor in the Hong Kong SAR. It works in accordance with the Occupational Safety and Health Ordinance (Cap. 509) and the Occupational Safety and Health Regulation (Cap. 509A), which place general duties on employers, occupiers and persons carrying out work to ensure, so far as is reasonably practicable, the safety and health of employees and of other persons at the workplace, including audience members, venue staff and other contractors. Work equipment is provided and maintained in safe condition, and temporary electrical arrangements comply with the Electricity Ordinance (Cap. 406) and the Electricity (Wiring) Regulations (Cap. 406E).\n\nThe display takes place in a temporary place of public entertainment licensed under the Places of Public Entertainment Ordinance (Cap. 172), under which a laser projection display is entertainment. The laser operation is declared in the organiser's TPPE licence application to the Food and Environmental Hygiene Department together with the Display Laser Information required by Section 6 of the FEHD application guide, and this document, the effect layout and the equipment particulars are provided to the organiser, the venue and, on request, the licensing authority and the departments it consults (the Electrical and Mechanical Services Department, the Fire Services Department, the Buildings Department and the Police) in support of that application and of the venue's prior approval of the effect. The installed equipment is presented to EMSD for on-site inspection and demonstration before the display commences, and any conditions attached to the licence, the inspection or the venue's approval are complied with.\n\nExposure to laser radiation is assessed against the maximum permissible exposure limits of IEC 60825-1, and all laser projectors used are classified in accordance with that standard as stated in the equipment inventory. The display is planned, installed, aligned and operated in accordance with Part 4 of the EMSD Laser Safety Guidance Notes for Industry, Display and Entertainment (2005), which reproduces the UK HSE guidance HS(G)95 for display lasers, with IEC TR 60825-3:2022, Safety of laser products, Part 3: Guidance for laser displays and shows, and with PLASA Safety of Display Lasers (1st Edition, April 2016), the current successor to HS(G)95, applied as the industry code of practice. The company also applies its home framework, the Control of Artificial Optical Radiation at Work Regulations 2010, to every display as a matter of good practice.",
+      "insuranceBlurb": "Evidence of insurance is provided by reproduction of the company's certificate(s) of insurance in full, appended to and forming part of this document. Policy details, including the territorial limits applying to work in the Hong Kong SAR, are as stated on the certificate and policy schedule; no summary is substituted for them. Any cover required by the venue or the organiser beyond the company's own policy is arranged through the organiser and confirmed separately.",
+      "authorityInfoSheet": {
+        "title": "Display laser information for the licensing authorities",
+        "intro": "The Food and Environmental Hygiene Department's TPPE application (form FEHB104, Annex III, Display Laser Information, and Section 6 of the FEHD application guide) and the EMSD on-site inspection call for the particulars below. They are set out here so that the organiser can transcribe them into the application and EMSD can check them against the installed equipment.",
+        "note": "Beam divergence is stated in milliradians in the inventory and in radians here (1 mrad = 0.001 radian). The sketch plan required by Annex III (locations of the laser equipment, beam stops, control position, beam paths and patterns, reflective surfaces, barriers and the boundary of the laser display area) is the effect layout appended to this document. The demonstration that irradiance outside the boundary of the laser display area is below the MPE is given in the exposure assessment and effects sections. Equipment catalogue: the technical sheet is appended."
+      }
+    }
   }
 }

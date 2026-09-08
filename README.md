@@ -89,6 +89,21 @@ Before making the repo public, note that `seed/` ships your company details
 out, plus the H&S policy PDF). That is what makes fresh installs useful demos,
 but review it once with public eyes.
 
+## Jurisdictions
+
+Each event has a **Jurisdiction** (Event details step). *United Kingdom* prints
+the default boilerplate in `library.boilerplate`; *Hong Kong SAR* overlays
+`library.boilerplateVariants.hk` key by key (legislation and standards
+references, compliance statement, electrical / work-at-height / fire wording,
+method steps, and a "Display laser information" sheet cross-referenced to the
+FEHD form FEHB104 Annex III that the TPPE licence application needs). Add
+another territory by adding a key under `boilerplateVariants` and an entry in
+`src/jurisdictions.js`; anything a variant does not override falls back to the
+UK text.
+
+Headless export of any event: `electron . --export <eventId> [out.pdf]`
+(`<eventId>` is the `data/events/<id>.json` filename without `.json`).
+
 ## Where your data lives
 
 Everything is stored as plain JSON + copied files in **`data/`** next to the app
