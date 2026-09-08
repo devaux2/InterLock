@@ -137,7 +137,7 @@ story behind the tool + industry links).
 - **Phone number**: your old documents used both +44 79**44** 282 177 and
   +44 79**74** 282 177. The seed uses 7974 (the one in your most recent
   documents). Fix on the Company tab if wrong.
-- **Author name**: seeded as "Whitcliffe Theodore Frederick Wainhouse" (the old
+- **Author name**: seeded as "Whitcliffe Theodore Frederick de Vaux" (the old
   docs also variously used "Whitcliffe de Vaux"). Change on the Company tab if
   preferred.
 - **Logo**: extracted from your existing PDF at print quality; replace with an
